@@ -14,8 +14,8 @@ class AddAttributeIntoUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('isAdmin');
-            $table->boolean('isActive');
+            $table->boolean('is_admin');
+            $table->boolean('is_active');
             $table->string('username');
         });
     }
@@ -28,8 +28,8 @@ class AddAttributeIntoUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('isAdmin');
-            $table->dropColumn('isActive');
+            $table->dropColumn('is_admin');
+            $table->dropColumn('is_active');
             $table->dropColumn('username');
         });
     }
