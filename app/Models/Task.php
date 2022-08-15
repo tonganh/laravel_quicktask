@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-// !TODO: update blacklist, ...
-class User extends Authenticatable
+// !TODO: Create task model
+class Task extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
+
 
     /**
      * The attributes that are mass assignable.
@@ -19,12 +19,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'email',
-        'password',
-        'is_active',
-        'username',
-        'first_name',
-        'last_name',
+        'task_title',
+        'task_content',
     ];
 
     /**
@@ -32,11 +28,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-        'is_admin',
-    ];
+    protected $hidden = [];
 
     /**
      * The attributes that should be cast.
