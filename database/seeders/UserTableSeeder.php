@@ -16,17 +16,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('users')->insert([
-        //     [
-        //         'username' => 'anh_tn',
-        //         'first_name' => 'Tong',
-        //         'last_name' => 'Anh',
-        //         'email' => 'anh.tndev40@gmail.com',
-        //         'is_admin' => '1',
-        //         'is_active' => '0',
-        //         'password' => Hash::make('123456'),
-        //     ]
-        // ]);
         User::factory()->count(30)->create();
     }
 }
