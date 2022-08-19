@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('check_admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +19,7 @@ class UserController extends Controller
     public function index()
     {
         //
+        return response()->json(['test' => 'test']);
     }
 
     /**
@@ -23,7 +29,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -34,7 +39,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
