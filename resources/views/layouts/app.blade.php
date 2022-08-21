@@ -88,4 +88,10 @@
     </div>
 </body>
 
+<script>
+    function changeLanguage(lang) {
+        window.location = '{{url("change-language")}}/' + lang;
+    }
+</script>
+
 </html>
