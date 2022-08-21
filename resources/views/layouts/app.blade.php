@@ -33,6 +33,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <div>
+                    Langauge : <select onchange="changeLanguage(this.value)">
+                        <option {{session()->has('lang_code')?(session()->get('lang_code')=='en'?'selected':''):''}} value="en">English</option>
+                        <option {{session()->has('lang_code')?(session()->get('lang_code')=='vi'?'selected':''):''}} value="vi">vietnam</option>
+                        <option {{session()->has('lang_code')?(session()->get('lang_code')=='es'?'selected':''):''}} value="es">Spanish</option>
+                    </select>
+                </div>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
@@ -82,5 +90,11 @@
         </main>
     </div>
 </body>
+
+<script>
+    function changeLanguage(lang) {
+        window.location = '{{url("change-language")}}/' + lang;
+    }
+</script>
 
 </html>
