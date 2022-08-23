@@ -13,5 +13,8 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-bower_components
+
+/public/css
+/public/js
+/bower_components
 artisan

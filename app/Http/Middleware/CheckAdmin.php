@@ -18,8 +18,9 @@ class CheckAdmin
     {
         $is_admin = $request->input('is_admin');
         if ($is_admin != true) {
-            return redirect('/');
+            return redirect('home');
         }
+
         return $next($request);
     }
 }
