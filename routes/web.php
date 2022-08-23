@@ -35,3 +35,6 @@ Route::prefix('tasks')->name('tasks.')->controller(TaskController::class)->group
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/change-language/{lang}', [\App\Http\Controllers\ChangeLanguageController::class, 'changeLang'])->name('changeLang');
