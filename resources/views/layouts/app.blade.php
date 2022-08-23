@@ -33,6 +33,11 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <div>
+                    <a href="{{ route('changeLang',['lang' => 'vi']) }}">Việt Nam</a>
+                    <a href="{{ route('changeLang',['lang' => 'en' ]) }}">English</a>
+                </div>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">

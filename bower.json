@@ -1,0 +1,20 @@
+{
+  "name": "laravel-quickstask",
+  "description": "",
+  "main": "",
+  "authors": [
+    "anhtn <tongngocanhcampha@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/tonganh/laravel_quicktask",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "nextjs-material-kit": "^1.2.1"
+  }
+}
