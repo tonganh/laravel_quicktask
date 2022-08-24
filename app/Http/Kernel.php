@@ -39,10 +39,10 @@ class Kernel extends HttpKernel
             // TODO: Tìm hiểu về phần CsrfToken, hiện comment lại để sử dụng test các method như post/patch
             // \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\Language::class,
         ],
 
         'api' => [
-            // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
