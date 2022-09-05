@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -18,8 +21,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
-        return response()->json(['test' => 'test']);
+        $paginate_number = Config::get('filesystems.paginate_number');
+        $users = User::latest()->paginate($paginate_number);
+        return view('users.index', compact('users'))
+            ->with('offset', (request()->input('page', 1) - 1) * $paginate_number);
     }
 
     /**
@@ -29,6 +34,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        return view('users.create');
     }
 
     /**
@@ -47,10 +53,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('users.show', compact('user'));
     }
+
+
+    // public function show($id)
+    // {
+    //     return view('users.show', compact('user'));
+    // }
 
     /**
      * Show the form for editing the specified resource.

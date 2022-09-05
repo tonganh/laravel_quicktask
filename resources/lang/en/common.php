@@ -18,5 +18,13 @@ return [
     'forgot_password' => 'Forgot Your Password?',
     'confirm_password' => 'Comfirm password',
     'register' => 'Register',
-
+    'no' => 'No',
+    'username' => 'Username',
+    'first_name' => 'First Name',
+    'last_name' => 'Last Name',
+    'actions' => 'Actions',
+    'create_new_users' => 'Create new Users',
+    'show' => 'Show',
+    'edit' => 'Edit',
+    'delete' => 'delete',
 ];
