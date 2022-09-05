@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -13,7 +15,10 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $paginate_number = Config::get('filesystems.paginate_number');
+        $tasks = DB::table('tasks')->get();
+
+        return view('tasks.index', compact('tasks'))->with('offset', (request()->input('page', 1) - 1) * $paginate_number);
     }
 
     /**

@@ -23,6 +23,7 @@ class UserController extends Controller
     {
         $paginate_number = Config::get('filesystems.paginate_number');
         $users = User::latest()->paginate($paginate_number);
+
         return view('users.index', compact('users'))
             ->with('offset', (request()->input('page', 1) - 1) * $paginate_number);
     }
@@ -45,6 +46,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        User::create($request->all());
+
+        return redirect()->route('users.index')
+            ->with('success', 'Users created successfully.');
     }
 
     /**
@@ -55,7 +65,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $tasks = $user->tasks;
+
+        return view('users.show', compact('user', 'tasks'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
 

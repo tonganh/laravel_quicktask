@@ -23,8 +23,11 @@ return [
     'first_name' => 'Họ',
     'last_name' => 'Tên',
     'actions' => 'Thao tác',
-    'create_new_users' => 'Tạo mới người dùng',
+    'task_title' => 'Tiêu đề',
+    'task_content' => 'Nội dung',
+    'create_new_task' => 'Tạo task mới',
+    'create_new_user' => 'Tạo user mới',
     'show' => 'Xem',
-    'edit' => 'Chỉnh sửa',
+    'edit' => 'Sửa',
     'delete' => 'Xóa',
 ];

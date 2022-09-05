@@ -40,6 +40,21 @@
             {{ $user->last_name }}
         </div>
     </div>
-
+    <div class="row">
+        <table class="table table-bordered table-responsive-lg">
+            <tr>
+                <th>No</th>
+                <th>{{__("common.username")}}</th>
+                <th>{{__("common.email_address")}}</th>
+            </tr>
+            @foreach ($tasks as $task)
+            <tr>
+                <td>{{ ++$i }}</td>
+                <td>{{ $task->task_title }}</td>
+                <td>{{ $task->task_content }}</td>
+            </tr>
+            @endforeach
+        </table>
+    </div>
 </div>
 @endsection

@@ -23,8 +23,11 @@ return [
     'first_name' => 'First Name',
     'last_name' => 'Last Name',
     'actions' => 'Actions',
-    'create_new_users' => 'Create new Users',
+    'task_title' => 'Task Title',
+    'task_content' => 'Task Content',
+    'create_new_task' => 'Create New Tasks',
+    'create_new_user' => 'Create New User',
     'show' => 'Show',
     'edit' => 'Edit',
-    'delete' => 'delete',
+    'delete' => 'Delete',
 ];
