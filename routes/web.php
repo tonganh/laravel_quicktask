@@ -21,7 +21,6 @@ Route::get('/', function () {
 });
 
 Route::resource('users', UserController::class);
-
 Route::prefix('tasks')->name('tasks.')->controller(TaskController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::post('/', 'store')->name('store');
