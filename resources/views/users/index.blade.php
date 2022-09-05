@@ -7,7 +7,7 @@
             <h2>CRUD users</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('users.create') }}">{{__("common.create_new_users")}}</a>
+            <a class="btn btn-success" href="{{ route('users.create') }}"> {{__("common.create_new_user")}} </a>
         </div>
     </div>
 </div>
